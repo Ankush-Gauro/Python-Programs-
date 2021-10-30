@@ -12,6 +12,10 @@ def str2bin(message):
     binary = bin(int(t.hexlify(message), 16))
     return binary[2:]
 
+def bin2str(binary):
+    message = t.unhexify('%x' % (int('0b' + binary, 2)))
+    return message
+
 def encode(hexcode, digit):
     if hexcode[-1] in ('0', '1', '2', '3', '4', '5'):
         hexcode = hexcode[:-1] + digit
